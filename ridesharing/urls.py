@@ -10,7 +10,7 @@ router.register(r'rides', RideViewSet)
 
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('rides/<int:pk>/cancel/', RideViewSet.as_view({'put': 'cancel_ride'})),
     path('rides/<int:pk>/status/', RideViewSet.as_view({'put': 'update_status'})),
     path('rides/<int:pk>/complete/', RideViewSet.as_view({'put': 'complete_ride'})),
